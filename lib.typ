@@ -145,11 +145,16 @@
 
   show emph: text.with(font: ((name: font.main, covers: "latin-in-cjk"), font.emph-cjk))
   show raw: set text(font: ((name: font.mono, covers: "latin-in-cjk"), font.cjk))
+  // 数学公式的字体
   show math.equation: it => {
     set text(font: font.math)
-    show regex("\p{script=Han}"): set text(font: font.math-cjk)
     it
   }
+  show math.text: set text(
+  // 数学公式中引入的中文字的字体
+  font: ((name: font.main, covers: "latin-in-cjk"), font.cjk),
+  // size: 1em,         
+)
   // 文本高亮
   set highlight(fill: accent-color.lighten(50%))
 
