@@ -12,9 +12,10 @@
 
 2. 导入模板，并在文档开头设置参数，包括标题、作者、课程或主题、学期、时间；
   ```typ
-  #import "@preview/ori:0.2.2": *
+  #import "@preview/ori:0.2.3": *
 
   #set heading(numbering: numbly("{1:一}、", default: "1.1  "))
+  #set math.equation(numbering: "(1)")
 
   #show: ori.with(
     title: "文档标题",
