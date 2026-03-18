@@ -1,4 +1,4 @@
-#import "@preview/ori:0.2.3": *
+#import "@preview/ori:0.2.4": *
 
 #set heading(numbering: numbly("{1:一}、", default: "1.1  "))
 #set math.equation(numbering: "(1)")
@@ -25,7 +25,7 @@
 
 + 导入模板，并在文档开头设置参数，包括标题、作者、课程或主题、学期、时间；
   ```typ
-  #import "@preview/ori:0.2.3": *
+  #import "@preview/ori:0.2.4": *
 
   #show: ori.with(
     title: "文档标题",
@@ -115,35 +115,35 @@
   命题内容。
 ] <proposition>
 
-#emph-box[
+#emph-block[
   强调内容。
 ]
 
-#quote-box[
+#quote-block[
   引用内容。
 ]
 
-#remark[
+#remark-block[
   注解内容。
 ]
 
-#note-box[
+#note-block[
   在快速浏览时也应该注意的重要信息。
 ]
 
-#tip-box[
+#tip-block[
   帮助更好使用的可选建议信息。
 ]
 
-#important-box[
+#important-block[
   为了成功使用必须了解的关键信息。
 ]
 
-#warning-box[
+#warning-block[
   可能存在风险，需要立即注意的关键信息。
 ]
 
-#caution-box[
+#caution-block[
   可能带来负面后果的提醒信息。
 ]
 

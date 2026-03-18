@@ -1,8 +1,8 @@
 #import "@preview/numbly:0.1.0": numbly
 #import "@preview/tablem:0.3.0": tablem, three-line-table
-#import "@preview/mitex:0.2.5": *
-#import "@preview/cmarker:0.1.6": render as cmarker-render
-#import "@preview/theorion:0.4.0": *
+#import "@preview/mitex:0.2.6": *
+#import "@preview/cmarker:0.1.8": render as cmarker-render
+#import "@preview/theorion:0.5.0": *
 #import cosmos.fancy: *
 #let md = cmarker-render.with(math: mitex)
 
@@ -73,7 +73,8 @@
     lang: lang,
     region: region,
   )
-  show emph: text.with(font: ((name: font.main, covers: "latin-in-cjk"), font.emph-cjk))
+  show smartquote: set text(font: font.main)
+  show emph: set text(font: ((name: font.main, covers: "latin-in-cjk"), font.emph-cjk)) 
   show raw: set text(font: ((name: font.mono, covers: "latin-in-cjk"), font.cjk))
   show math.equation: it => {
     set text(font: font.math)
@@ -145,6 +146,12 @@
   /// 基础设置。
   set document(title: title, author: if type(author) == str { author } else { () }, date: date)
 
+  /// 设置页面。
+  set page(
+    paper: "a4",
+    fill: bg-color,
+  )
+
   /// 标题页。
   if maketitle {
     // Title page
@@ -173,7 +180,6 @@
 
   /// 设置页面。
   set page(
-    paper: "a4",
     header: {
       set text(0.9em)
       stack(
@@ -190,7 +196,6 @@
       // reset footnote counter
       counter(footnote).update(0)
     },
-    fill: bg-color,
     numbering: "1",
     margin: page-margin,
   )
