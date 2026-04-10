@@ -1,8 +1,8 @@
 #import "@preview/numbly:0.1.0": numbly
 #import "@preview/tablem:0.3.0": tablem, three-line-table
-#import "@preview/mitex:0.2.6": *
+#import "@preview/mitex:0.2.7": *
 #import "@preview/cmarker:0.1.8": render as cmarker-render
-#import "@preview/theorion:0.5.0": *
+#import "@preview/theorion:0.6.0": *
 #import cosmos.fancy: *
 #let md = cmarker-render.with(math: mitex)
 
